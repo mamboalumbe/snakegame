@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>Snake</h1>
+
+        <div class="hud">
+            <div>Score: <span id="score">0</span></div>
+            <div>Your Best: <span id="best">0</span></div>
+        </div>
+
+        <!-- Always-visible reminder of who currently holds the all-time high score -->
+        <div class="top-score-banner" id="top-score-banner"></div>
+
+        <div class="board-shell">
+            <canvas id="board" width="400" height="400" aria-label="Snake game board"></canvas>
+
+            <!-- Single overlay element reused for: name entry, pause, and game over.
+         Its contents are swapped by JS depending on game state. -->
+            <div class="overlay show" id="overlay">
+                <h2 id="overlay-title">Ready?</h2>
+                <p id="overlay-text">Use arrow keys or WASD to move. Eat the food nigga. Don't bampola yoself on tha wall.</p>
+
+                <div class="name-field" id="name-field">
+                    <label for="player-name">Faka zina mwaiche (for the leaderboard)</label>
+                    <input type="text" id="player-name" maxlength="12" placeholder="e.g. Luffy" autocomplete="off">
+                </div>
+
+                <button id="overlay-btn">Start Game</button>
+
+                <div class="leaderboard" id="leaderboard">
+                    <h3>Top Scores</h3>
+                    <ol id="leaderboard-list"></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="hint">Arrow keys / WASD to move &middot; Space to pause</div>
+
+        <div class="controls-mobile">
+            <button class="ctrl-up" data-dir="up" aria-label="Move up">&#8593;</button>
+            <button class="ctrl-left" data-dir="left" aria-label="Move left">&#8592;</button>
+            <button class="ctrl-down" data-dir="down" aria-label="Move down">&#8595;</button>
+            <button class="ctrl-right" data-dir="right" aria-label="Move right">&#8594;</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
